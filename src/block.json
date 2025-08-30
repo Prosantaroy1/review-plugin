@@ -73,6 +73,33 @@
 						"left": "0px",
 						"right": "0px",
 						"bottom": "0px"
+					},
+					"margin": {
+						"top": "0px",
+						"left": "0px",
+						"right": "0px",
+						"bottom": "0px"
+					}
+				},
+				"headingStyle": {
+					"headingTitleStyle": {
+						"typo": {
+							"fontWeight": 700,
+							"fontSize": {
+								"desktop": 48,
+								"tablet": 32,
+								"mobile": 24
+							},
+							"lineHeight": 1,
+							"fontFamily": "ui-sans-serif, system-ui"
+						},
+						"margin": {
+							"top": "0px",
+							"right": "0px",
+							"bottom": "15px",
+							"left": "0px"
+						},
+						"color": "#ffffff"
 					}
 				}
 			}

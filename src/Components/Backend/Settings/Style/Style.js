@@ -30,6 +30,48 @@ const Style = ({ attributes, setAttributes }) => {
             Styles: updateData(Styles, v, 'containerSection', 'padding')
           })}
         />
+        {/* container margin */}
+        <BoxControl
+          label="Margin"
+          values={containerSection?.margin}
+          onChange={(v) => setAttributes({
+            Styles: updateData(Styles, v, 'containerSection', 'margin')
+          })}
+        />
+        {/* container border radius */}
+        <BoxControl
+          label="Border Radius"
+          values={containerSection?.borderRadius}
+          onChange={(v) => setAttributes({
+            Styles: updateData(Styles, v, 'containerSection', 'borderRadius')
+          })}
+        />
+      </PanelBody>
+      <PanelBody className='bPlPanelBody' title={__('', 'b-blocks')} initialOpen={false}>
+        {/* container background */}
+        <Background
+          label="Container Background"
+          value={containerSection?.bg}
+          onChange={(v) => setAttributes({
+            Styles: updateData(Styles, v, 'containerSection', 'bg')
+          })}
+        />
+        {/* container padding */}
+        <BoxControl
+          label="Padding"
+          values={containerSection?.padding}
+          onChange={(v) => setAttributes({
+            Styles: updateData(Styles, v, 'containerSection', 'padding')
+          })}
+        />
+        {/* container margin */}
+        <BoxControl
+          label="Margin"
+          values={containerSection?.margin}
+          onChange={(v) => setAttributes({
+            Styles: updateData(Styles, v, 'containerSection', 'margin')
+          })}
+        />
         {/* container border radius */}
         <BoxControl
           label="Border Radius"
@@ -43,4 +85,7 @@ const Style = ({ attributes, setAttributes }) => {
   )
 }
 
-export default Style
+export default Style;
+
+
+

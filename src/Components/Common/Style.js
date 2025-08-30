@@ -14,6 +14,7 @@ const Style = ({ attributes, id }) => {
 		${blockSl}{
 			${getBackgroundCSS(containerSection?.bg)}
 			padding: ${getBoxCSS(containerSection?.padding)};
+			margin: ${getBoxCSS(containerSection?.margin)};
 			border-radius: ${getBoxCSS(containerSection?.borderRadius)};
 		}
 

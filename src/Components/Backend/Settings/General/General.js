@@ -35,7 +35,7 @@ const General = ({ attributes, setAttributes }) => {
       {/* card input */}
       <PanelBody
         className="bPlPanelBody"
-        title={__("Heading Input", "b-blocks")}
+        title={__("Card Text Input", "b-blocks")}
         initialOpen={false}
       >
         {/* heading title */}
