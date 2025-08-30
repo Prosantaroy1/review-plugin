@@ -1,0 +1,96 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "b-blocks/prst-testimonial",
+	"version": "1.0.0",
+	"title": "PRSTB testimonial",
+	"category": "widgets",
+	"description": "Short description of the Test Purpose",
+	"keywords": [
+		"testimonial"
+	],
+	"textdomain": "b-blocks",
+	"attributes": {
+		"alignment": {
+			"type": "string",
+			"default": "center"
+		},
+		"purposeType": {
+			"type": "string",
+			"default": "default"
+		},
+		"feedBackAll": {
+			"type": "array",
+			"default": [
+				{
+					"id": 1,
+					"title": "Rahim Ahmed",
+					"description": "The course was very helpful for beginners. The instructor explained every topic clearly with examples. I gained confidence in coding and problem solving.",
+					"icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\"><path d=\"M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256 256-114.6 256-256S397.4 0 256 0zm0 480c-123.5 0-224-100.5-224-224S132.5 32 256 32s224 100.5 224 224-100.5 224-224 224z\"></path></svg>"
+				},
+				{
+					"id": 2,
+					"title": "Fatema Khan",
+					"description": "Amazing learning experience! The lessons were well structured and easy to follow. I really enjoyed the practical projects, which made concepts more clear.",
+					"icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\"><path d=\"M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256 256-114.6 256-256S397.4 0 256 0zm0 480c-123.5 0-224-100.5-224-224S132.5 32 256 32s224 100.5 224 224-100.5 224-224 224z\"></path></svg>"
+				},
+				{
+					"id": 3,
+					"title": "Samiul Hasan",
+					"description": "This course improved my skills in a short time. I liked the friendly teaching style and real-world practice tasks. Highly recommended for students.",
+					"icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\"><path d=\"M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256 256-114.6 256-256S397.4 0 256 0zm0 480c-123.5 0-224-100.5-224-224S132.5 32 256 32s224 100.5 224 224-100.5 224-224 224z\"></path></svg>"
+				},
+				{
+					"id": 4,
+					"title": "Nusrat Jahan",
+					"description": "Great content and teaching method. The examples were practical and useful. I can now build projects on my own confidently after completing this course.",
+					"icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\"><path d=\"M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256 256-114.6 256-256S397.4 0 256 0zm0 480c-123.5 0-224-100.5-224-224S132.5 32 256 32s224 100.5 224 224-100.5 224-224 224z\"></path></svg>"
+				}
+			]
+		},
+		"HeadingSection": {
+			"type": "object",
+			"default": {
+				"headingTitle": "Student Feedback Courses",
+				"headingSubTitle": "Feedback is any response regarding a student performance or behavior. It can be verbal, written or gestural. The purpose of feedback in the assessment."
+			}
+		},
+		"Styles": {
+			"type": "object",
+			"default": {
+				"containerSection": {
+					"bg": {
+						"color": "linear-gradient(135deg, #00ff8f, #00a1ff)"
+					},
+					"padding": {
+						"top": "60px",
+						"left": "0px",
+						"right": "0px",
+						"bottom": "60px"
+					},
+					"borderRadius": {
+						"top": "0px",
+						"left": "0px",
+						"right": "0px",
+						"bottom": "0px"
+					}
+				}
+			}
+		}
+	},
+	"supports": {
+		"align": [
+			"wide",
+			"full"
+		],
+		"html": false
+	},
+	"example": {
+		"attributes": {}
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./view.css",
+	"render": "file:./render.php",
+	"viewScript": "file:./view.js"
+}

@@ -1,0 +1,75 @@
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/style.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************/
+
+/*!*********************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./src/Components/Common/HeadingTitle/HeadingTitle.css ***!
+  \*********************************************************************************************************************************************************************************************************/
+.prst-heading-Title-2 {
+    text-align: center;
+    font-size: 24px;
+    color: rgb(0, 0, 0);
+    font-weight: 900;
+}
+
+.prst-heading-SubTitle-2 {
+    text-align: center;
+    font-size: 16px;
+    color: rgb(36, 36, 35);
+    font-weight: 500;
+    padding-bottom: 28px;
+    width: 600px;
+    margin: auto;
+}
+/*!*************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./src/Components/Common/theme/feedbackSec.css ***!
+  \*************************************************************************************************************************************************************************************************/
+/* Main section background */
+.container-prst-main {
+    /* main section background */
+    padding: 50px 20px;
+}
+
+/* Cards wrapper with grid */
+.section-all-card-prst {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.prst-cards-div {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* 4 cards per row */
+    gap: 20px;
+}
+
+/* Single card styling */
+.prst-single-cards {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.prst-single-cards:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Title styling */
+.prst-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Description styling */
+.prst-descrption {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+}
+
+/*# sourceMappingURL=view.css.map*/
