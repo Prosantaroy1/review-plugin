@@ -10,7 +10,7 @@ const Style = ({ attributes, setAttributes }) => {
 
   const { containerSection, headingStyle, cardContent } = Styles || {};
 
-  console.log('content color------', cardContent?.cardTitle?.typo)
+  console.log('card------', cardContent?.cardBoxStyle?.padding)
 
   return (
     <>
@@ -101,6 +101,21 @@ const Style = ({ attributes, setAttributes }) => {
         />
       </PanelBody>
       <PanelBody className='bPlPanelBody' title={__('Card Content Style ', 'b-blocks')} initialOpen={false}>
+        {/* card padding */}
+        <BoxControl
+          label="Card Padding"
+          values={cardContent?.cardBoxStyle?.padding}
+          onChange={(v) => setAttributes({
+            Styles: updateData(Styles, v, 'cardContent', 'cardBoxStyle', 'padding')
+          })}
+        />
+        <BoxControl
+          label="Card Padding"
+          values={cardContent?.cardBoxStyle?.margin}
+          onChange={(v) => setAttributes({
+            Styles: updateData(Styles, v, 'cardContent', 'cardBoxStyle', 'margin')
+          })}
+        />
         {/* typography */}
         <Typography
           label='Title typography'
