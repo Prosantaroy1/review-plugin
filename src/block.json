@@ -15,9 +15,17 @@
 			"type": "string",
 			"default": "center"
 		},
+		"align": {
+			"type": "string",
+			"default": "full"
+		},
 		"purposeType": {
 			"type": "string",
 			"default": "default"
+		},
+		"activeIndex": {
+			"type": "number",
+			"default": 3
 		},
 		"feedBackAll": {
 			"type": "array",
@@ -60,7 +68,7 @@
 			"default": {
 				"containerSection": {
 					"bg": {
-						"color": "linear-gradient(135deg, #00ff8f, #00a1ff)"
+						"color": "linear-gradient(135deg, #4527a4, #8344c5)"
 					},
 					"padding": {
 						"top": "60px",
@@ -82,24 +90,37 @@
 					}
 				},
 				"headingStyle": {
-					"headingTitleStyle": {
+					"title": {
 						"typo": {
 							"fontWeight": 700,
 							"fontSize": {
-								"desktop": 48,
-								"tablet": 32,
-								"mobile": 24
+								"desktop": 28,
+								"tablet": 20,
+								"mobile": 18
 							},
-							"lineHeight": 1,
-							"fontFamily": "ui-sans-serif, system-ui"
+							"lineHeight": 2,
+							"fontFamily": "Montserrat, sans-serif"
 						},
 						"margin": {
 							"top": "0px",
 							"right": "0px",
-							"bottom": "15px",
+							"bottom": "6px",
 							"left": "0px"
 						},
-						"color": "#ffffff"
+						"color": "white"
+					},
+					"subTitle": {
+						"typo": {
+							"fontWeight": 500,
+							"fontSize": {
+								"desktop": 16,
+								"tablet": 14,
+								"mobile": 12
+							},
+							"lineHeight": 1.5,
+							"fontFamily": "Montserrat, sans-serif"
+						},
+						"color": "white"
 					}
 				}
 			}

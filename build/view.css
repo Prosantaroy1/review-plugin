@@ -7,19 +7,13 @@
   \*********************************************************************************************************************************************************************************************************/
 .prst-heading-Title-2 {
     text-align: center;
-    font-size: 24px;
-    color: rgb(0, 0, 0);
-    font-weight: 900;
 }
 
 .prst-heading-SubTitle-2 {
     text-align: center;
-    font-size: 16px;
-    color: rgb(36, 36, 35);
-    font-weight: 500;
-    padding-bottom: 28px;
-    width: 600px;
+    width: 680px;
     margin: auto;
+    padding-bottom: 26px;
 }
 /*!*************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./src/Components/Common/theme/feedbackSec.css ***!

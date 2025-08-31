@@ -15,7 +15,9 @@ const FeedbackSection = ({ attributes, setAttributes }) => {
                     {
                         feedBackAll.length > 0 && feedBackAll.map((item, idx) => {
                             return (
-                                <div key={idx} className='prst-single-cards'>
+                                <div key={idx} className='prst-single-cards' onClick={() => setAttributes({
+                                    activeIndex: idx
+                                })}>
                                     <h3 className='prst-title'>{item.title}</h3>
                                     <p className='prst-descrption'>{item.description}</p>
                                 </div>

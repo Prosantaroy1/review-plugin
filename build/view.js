@@ -888,26 +888,55 @@ const Style = ({
   id
 }) => {
   const {
-    colors,
     Styles
   } = attributes;
   const {
-    containerSection
-  } = Styles || {};
+    containerSection,
+    headingStyle
+  } = Styles || {}; //styles
+
+  const {
+    title,
+    subTitle
+  } = headingStyle || {}; //heading
+
+  //console.log('title-color', title?.color)
+
   const mainSl = `#${id}`;
   const blockSl = `${mainSl} .container-prst-main`;
+  const headingmainSl = ` ${blockSl} .section-all-card-prst .prst-headingSection`;
+  const headingTitleSl = `${headingmainSl} .prst-heading-Title-2`;
+  const headingSubTitleSl = `${headingmainSl} .prst-heading-SubTitle-2`;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", {
     dangerouslySetInnerHTML: {
       __html: `
+	
 		
-		${blockSl}{
-			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getBackgroundCSS)(containerSection?.bg)}
-			padding: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getBoxCSS)(containerSection?.padding)};
-			margin: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getBoxCSS)(containerSection?.margin)};
-			border-radius: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getBoxCSS)(containerSection?.borderRadius)};
-		}
+		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)("", headingStyle.title.typo).googleFontLink}  
+		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)("", headingStyle.subTitle.typo).googleFontLink} 
 
-	`
+
+		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(headingTitleSl, headingStyle.title.typo).styles}  
+		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(headingSubTitleSl, headingStyle.subTitle.typo).styles}  
+
+
+	${blockSl}{
+			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getBackgroundCSS)(containerSection?.bg)}
+			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getBorderCSS)(containerSection?.border)}
+			padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getBoxCSS)(containerSection?.padding)};
+ 	        margin: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getBoxCSS)(containerSection?.margin)};
+        }
+		${headingTitleSl}{
+		    margin: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getBoxCSS)(headingStyle?.title?.margin)};
+			color: ${title?.color};
+		}
+		
+		${headingSubTitleSl}{
+			color: ${subTitle?.color};
+		}
+		
+
+`
     }
   });
 };
@@ -954,7 +983,10 @@ const FeedbackSection = ({
   }, feedBackAll.length > 0 && feedBackAll.map((item, idx) => {
     return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       key: idx,
-      className: "prst-single-cards"
+      className: "prst-single-cards",
+      onClick: () => setAttributes({
+        activeIndex: idx
+      })
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
       className: "prst-title"
     }, item.title), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
