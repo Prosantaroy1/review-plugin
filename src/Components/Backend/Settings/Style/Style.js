@@ -8,9 +8,9 @@ import { BorderControl } from '../../../../../../bpl-tools/Components/Deprecated
 const Style = ({ attributes, setAttributes }) => {
   const { Styles = {} } = attributes || {};
 
-  const { containerSection, headingStyle } = Styles || {};
+  const { containerSection, headingStyle, cardContent } = Styles || {};
 
-  console.log('bg---', containerSection?.bg)
+  console.log('content color------', cardContent?.cardTitle?.typo)
 
   return (
     <>
@@ -97,6 +97,50 @@ const Style = ({ attributes, setAttributes }) => {
           value={headingStyle?.subTitle?.color}
           onChange={(v) => setAttributes({
             Styles: updateData(Styles, v, 'headingStyle', 'subTitle', 'color')
+          })}
+        />
+      </PanelBody>
+      <PanelBody className='bPlPanelBody' title={__('Card Content Style ', 'b-blocks')} initialOpen={false}>
+        {/* typography */}
+        <Typography
+          label='Title typography'
+          value={cardContent?.cardTitle?.typo}
+          onChange={(v) => setAttributes({
+            Styles: updateData(Styles, v, "cardContent", "cardTitle", "typo")
+          })}
+        />
+        {/* colors */}
+        <ColorControl
+          label='Title color'
+          value={cardContent?.cardTitle?.color}
+          onChange={(v) => setAttributes({
+            Styles: updateData(Styles, v, 'cardContent', 'cardTitle', 'color')
+          })}
+        />
+        {/* title margin */}
+        <BoxControl
+          label="Title margin"
+          values={cardContent?.cardTitle?.margin}
+          onChange={(v) => setAttributes({
+            Styles: updateData(Styles, v, 'cardContent', 'cardTitle', 'margin')
+          })}
+        />
+        {/*--------
+        ---------- description -----
+        ---- */}
+        <Typography
+          label='Description typography'
+          value={cardContent?.cardDescription?.typo}
+          onChange={(v) => setAttributes({
+            Styles: updateData(Styles, v, "cardContent", "cardDescription", "typo")
+          })}
+        />
+        {/* colors */}
+        <ColorControl
+          label='Description color'
+          value={cardContent?.cardDescription?.color}
+          onChange={(v) => setAttributes({
+            Styles: updateData(Styles, v, 'cardContent', 'cardDescription', 'color')
           })}
         />
       </PanelBody>

@@ -892,13 +892,19 @@ const Style = ({
   } = attributes;
   const {
     containerSection,
-    headingStyle
+    headingStyle,
+    cardContent
   } = Styles || {}; //styles
 
   const {
     title,
     subTitle
   } = headingStyle || {}; //heading
+
+  const {
+    cardTitle,
+    cardDescription
+  } = cardContent;
 
   //console.log('title-color', title?.color)
 
@@ -907,20 +913,26 @@ const Style = ({
   const headingmainSl = ` ${blockSl} .section-all-card-prst .prst-headingSection`;
   const headingTitleSl = `${headingmainSl} .prst-heading-Title-2`;
   const headingSubTitleSl = `${headingmainSl} .prst-heading-SubTitle-2`;
+  const carddivSl = `${blockSl} .prst-single-cards`;
+  const contentTitle = ` ${carddivSl} .prst-title `;
+  const contentDescription = ` ${carddivSl} .prst-descrption `;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", {
     dangerouslySetInnerHTML: {
       __html: `
-	
 		
 		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)("", headingStyle.title.typo).googleFontLink}  
 		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)("", headingStyle.subTitle.typo).googleFontLink} 
-
+		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)("", cardContent.cardTitle.typo).googleFontLink} 
+		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)("", cardContent.cardDescription.typo).googleFontLink} 
 
 		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(headingTitleSl, headingStyle.title.typo).styles}  
-		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(headingSubTitleSl, headingStyle.subTitle.typo).styles}  
+		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(headingSubTitleSl, headingStyle.subTitle.typo).styles} 
+		
+		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(contentTitle, cardContent.cardTitle.typo).styles}  
+		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(contentDescription, cardContent.cardDescription.typo).styles}  
 
 
-	${blockSl}{
+	    ${blockSl}{
 			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getBackgroundCSS)(containerSection?.bg)}
 			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getBorderCSS)(containerSection?.border)}
 			padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getBoxCSS)(containerSection?.padding)};
@@ -933,6 +945,15 @@ const Style = ({
 		
 		${headingSubTitleSl}{
 			color: ${subTitle?.color};
+		}
+
+		${contentTitle}{
+		  color: ${cardTitle?.color};
+		  margin: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getBoxCSS)(cardContent?.cardTitle?.margin)};
+		}
+		${contentDescription}{
+		  color: ${cardDescription?.color};
+		  margin: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getBoxCSS)(cardContent?.cardDescription?.margin)};
 		}
 		
 

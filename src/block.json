@@ -25,7 +25,7 @@
 		},
 		"activeIndex": {
 			"type": "number",
-			"default": 3
+			"default": 0
 		},
 		"feedBackAll": {
 			"type": "array",
@@ -98,7 +98,7 @@
 								"tablet": 20,
 								"mobile": 18
 							},
-							"lineHeight": 2,
+							"lineHeight": 1.5,
 							"fontFamily": "Montserrat, sans-serif"
 						},
 						"margin": {
@@ -121,6 +121,60 @@
 							"fontFamily": "Montserrat, sans-serif"
 						},
 						"color": "white"
+					}
+				},
+				"cardContent": {
+					"cardTitle": {
+						"typo": {
+							"fontWeight": 700,
+							"fontSize": {
+								"desktop": 20,
+								"tablet": 18,
+								"mobile": 14
+							},
+							"lineHeight": 2,
+							"fontFamily": "Montserrat, sans-serif"
+						},
+						"margin": {
+							"top": "0px",
+							"right": "0px",
+							"bottom": "6px",
+							"left": "0px"
+						},
+						"color": "black"
+					},
+					"cardDescription": {
+						"typo": {
+							"fontWeight": 500,
+							"fontSize": {
+								"desktop": 15,
+								"tablet": 13,
+								"mobile": 11
+							},
+							"lineHeight": 1.5,
+							"fontFamily": "Montserrat, sans-serif"
+						},
+						"margin": {
+							"top": "0px",
+							"right": "0px",
+							"bottom": "6px",
+							"left": "0px"
+						},
+						"color": "#877C7C"
+					},
+					"cardBoxStyle": {
+						"padding": {
+							"top": "0px",
+							"right": "0px",
+							"bottom": "0px",
+							"left": "0px"
+						},
+						"margin": {
+							"top": "0px",
+							"right": "0px",
+							"bottom": "0px",
+							"left": "0px"
+						}
 					}
 				}
 			}
