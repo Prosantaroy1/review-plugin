@@ -11,23 +11,48 @@
  */
 
 // ABS PATH
-if ( !defined( 'ABSPATH' ) ) { exit; }
+if (!defined('ABSPATH')) {
+	exit;
+}
 
 // Constant
-define( 'PRSTB_VERSION', isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.0.0' );
-define( 'PRSTB_DIR_URL', plugin_dir_url( __FILE__ ) );
-define( 'PRSTB_DIR_PATH', plugin_dir_path( __FILE__ ) );
+define('PRSTB_VERSION', isset($_SERVER['HTTP_HOST']) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.0.0');
+define('PRSTB_DIR_URL', plugin_dir_url(__FILE__));
+define('PRSTB_DIR_PATH', plugin_dir_path(__FILE__));
 
-if( !class_exists( 'PRSTBPlugin' ) ){
-	class PRSTBPlugin{
-		function __construct(){
-			add_action( 'init', [ $this, 'onInit' ] );
+
+if (!class_exists('PRSTBPlugin')) {
+	class PRSTBPlugin
+	{
+		function __construct()
+		{
+			add_action('init', [$this, 'onInit']);
 		}
 
-		function onInit(){
-			register_block_type( __DIR__ . '/build' );
+		function onInit()
+		{
+			register_block_type(__DIR__ . '/build');
 
 		}
 	}
 	new PRSTBPlugin();
 }
+
+
+// function my_marquee_theme()
+// {
+// 	wp_enqueue_script(
+// 		'wp_slider',
+// 		'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js',
+// 		[],
+// 		PRSTB_VERSION,
+// 		true
+// 	);
+
+// 	wp_enqueue_style(
+// 		'wp_slider_style',
+// 		'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css',
+// 		PRSTB_VERSION
+// 	);
+// }
+// add_action('enqueue_block_assets', 'my_marquee_theme');

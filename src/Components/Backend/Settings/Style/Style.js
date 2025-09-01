@@ -1,19 +1,39 @@
 
 import { __ } from '@wordpress/i18n';
-import { PanelBody } from '@wordpress/components';
-import { Background, BoxControl, ColorControl, Typography } from "../../../../../../bpl-tools/Components";
+import { PanelBody, PanelRow, RangeControl, __experimentalUnitControl as UnitControl } from '@wordpress/components';
+import { Background, BoxControl, ColorControl, Device, Label, Typography } from "../../../../../../bpl-tools/Components";
 import { updateData } from '../../../../utils/functions';
 import { BorderControl } from '../../../../../../bpl-tools/Components/Deprecated';
 
-const Style = ({ attributes, setAttributes }) => {
-  const { Styles = {} } = attributes || {};
+
+const Style = ({ attributes, setAttributes, device }) => {
+  const { Styles = {}, gridLayout = {} } = attributes || {};
 
   const { containerSection, headingStyle, cardContent } = Styles || {};
-
-  console.log('card------', cardContent?.cardBoxStyle?.padding)
+  const { cardBoxStyle } = cardContent || {};
+  //const { gap } = gridLayout;
+  console.log('card bg------', cardBoxStyle?.bg)
 
   return (
     <>
+      <PanelBody className='bPlPanelBody' title={__('Grid Layout', 'b-blocks')} initialOpen={false}>
+        <PanelRow><Label className=''>Row</Label> <Device /> </PanelRow>
+        {/* row select */}
+        <RangeControl
+          max={12}
+          min={1}
+          value={gridLayout[device]}
+          onChange={v => setAttributes({ gridLayout: updateData(gridLayout, v, device) })}
+        />
+        {/* gap */}
+        <UnitControl
+          label={__("GridLayout Gap")}
+          value={gridLayout?.gap}
+          onChange={(v) => setAttributes({
+            gridLayout: updateData(gridLayout, v, 'gap')
+          })}
+        />
+      </PanelBody>
       <PanelBody className='bPlPanelBody' title={__('Container Section Styles', 'b-blocks')} initialOpen={false}>
         {/* container background */}
         <Background
@@ -101,6 +121,14 @@ const Style = ({ attributes, setAttributes }) => {
         />
       </PanelBody>
       <PanelBody className='bPlPanelBody' title={__('Card Content Style ', 'b-blocks')} initialOpen={false}>
+        {/* bgColor */}
+        <Background
+          label="Card Background"
+          value={cardContent?.cardBoxStyle?.bg}
+          onChange={(v) => setAttributes({
+            Styles: updateData(Styles, v, 'cardContent', 'cardBoxStyle', 'bg')
+          })}
+        />
         {/* card padding */}
         <BoxControl
           label="Card Padding"
@@ -110,10 +138,10 @@ const Style = ({ attributes, setAttributes }) => {
           })}
         />
         <BoxControl
-          label="Card Padding"
-          values={cardContent?.cardBoxStyle?.margin}
+          label="Card Border-Radius"
+          values={cardContent?.cardBoxStyle?.borderRadius}
           onChange={(v) => setAttributes({
-            Styles: updateData(Styles, v, 'cardContent', 'cardBoxStyle', 'margin')
+            Styles: updateData(Styles, v, 'cardContent', 'cardBoxStyle', 'borderRadius')
           })}
         />
         {/* typography */}

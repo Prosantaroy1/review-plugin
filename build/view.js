@@ -880,16 +880,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../bpl-tools/utils/getCSS */ "../bpl-tools/utils/getCSS.js");
+/* harmony import */ var _bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../bpl-tools/utils/data */ "../bpl-tools/utils/data.js");
+/* harmony import */ var _bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../bpl-tools/utils/getCSS */ "../bpl-tools/utils/getCSS.js");
+
 
 
 const Style = ({
   attributes,
-  id
+  id,
+  device
 }) => {
   const {
-    Styles
-  } = attributes;
+    Styles = {},
+    gridLayout = {},
+    align
+  } = attributes || {};
   const {
     containerSection,
     headingStyle,
@@ -903,16 +908,16 @@ const Style = ({
 
   const {
     cardTitle,
-    cardDescription
+    cardDescription,
+    cardBoxStyle
   } = cardContent;
-
-  //console.log('title-color', title?.color)
-
+  console.log('grid layout', gridLayout);
   const mainSl = `#${id}`;
   const blockSl = `${mainSl} .container-prst-main`;
   const headingmainSl = ` ${blockSl} .section-all-card-prst .prst-headingSection`;
   const headingTitleSl = `${headingmainSl} .prst-heading-Title-2`;
   const headingSubTitleSl = `${headingmainSl} .prst-heading-SubTitle-2`;
+  const cardMainDivSl = ` ${blockSl} .prst-cards-div `;
   const carddivSl = `${blockSl} .prst-single-cards`;
   const contentTitle = ` ${carddivSl} .prst-title `;
   const contentDescription = ` ${carddivSl} .prst-descrption `;
@@ -920,26 +925,26 @@ const Style = ({
     dangerouslySetInnerHTML: {
       __html: `
 		
-		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)("", headingStyle.title.typo).googleFontLink}  
-		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)("", headingStyle.subTitle.typo).googleFontLink} 
-		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)("", cardContent.cardTitle.typo).googleFontLink} 
-		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)("", cardContent.cardDescription.typo).googleFontLink} 
+		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)("", headingStyle.title.typo).googleFontLink}  
+		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)("", headingStyle.subTitle.typo).googleFontLink} 
+		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)("", cardContent.cardTitle.typo).googleFontLink} 
+		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)("", cardContent.cardDescription.typo).googleFontLink} 
 
-		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(headingTitleSl, headingStyle.title.typo).styles}  
-		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(headingSubTitleSl, headingStyle.subTitle.typo).styles} 
+		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(headingTitleSl, headingStyle.title.typo).styles}  
+		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(headingSubTitleSl, headingStyle.subTitle.typo).styles} 
 		
-		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(contentTitle, cardContent.cardTitle.typo).styles}  
-		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getTypoCSS)(contentDescription, cardContent.cardDescription.typo).styles}  
+		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(contentTitle, cardContent.cardTitle.typo).styles}  
+		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(contentDescription, cardContent.cardDescription.typo).styles}  
 
 
 	    ${blockSl}{
-			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getBackgroundCSS)(containerSection?.bg)}
-			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getBorderCSS)(containerSection?.border)}
-			padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getBoxCSS)(containerSection?.padding)};
- 	        margin: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getBoxCSS)(containerSection?.margin)};
+			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(containerSection?.bg)}
+			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBorderCSS)(containerSection?.border)}
+			padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(containerSection?.padding)};
+ 	        margin: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(containerSection?.margin)};
         }
 		${headingTitleSl}{
-		    margin: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getBoxCSS)(headingStyle?.title?.margin)};
+		    margin: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(headingStyle?.title?.margin)};
 			color: ${title?.color};
 		}
 		
@@ -947,13 +952,37 @@ const Style = ({
 			color: ${subTitle?.color};
 		}
 
+		${cardMainDivSl}{
+			gap: ${gridLayout?.gap}
+		}
+		${_bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__.deskBreakpoint}{
+		   ${cardMainDivSl}{
+		      grid-template-columns: repeat(${align ? gridLayout?.desktop : 3}, 1fr);
+		   }
+		}
+		${_bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__.tabBreakpoint}{ 
+		   ${cardMainDivSl}{ 
+			   grid-template-columns: repeat(${align ? gridLayout?.tablet : 2}, 1fr);
+			} 
+		}
+		${_bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__.mobileBreakpoint}{ 
+		   ${cardMainDivSl}{ 
+			   grid-template-columns: repeat(${align ? gridLayout?.mobile : 1}, 1fr);
+			} 
+		}
+		${carddivSl}{
+		  ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(cardBoxStyle?.bg)}
+		  padding: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(cardContent?.cardBoxStyle?.padding)};  
+		  border-radius: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(cardContent?.cardBoxStyle?.borderRadius)};  
+		}
+
 		${contentTitle}{
 		  color: ${cardTitle?.color};
-		  margin: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getBoxCSS)(cardContent?.cardTitle?.margin)};
+		  margin: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(cardContent?.cardTitle?.margin)};
 		}
 		${contentDescription}{
 		  color: ${cardDescription?.color};
-		  margin: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getBoxCSS)(cardContent?.cardDescription?.margin)};
+		  margin: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(cardContent?.cardDescription?.margin)};
 		}
 		
 

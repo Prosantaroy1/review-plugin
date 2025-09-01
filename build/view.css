@@ -32,16 +32,14 @@
 
 .prst-cards-div {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    /* grid-template-columns: repeat(4, 1fr);
     /* 4 cards per row */
-    gap: 20px;
+    /* gap: 20px; */
 }
 
 /* Single card styling */
 .prst-single-cards {
     background: #ffffff;
-    padding: 20px;
-    border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -52,7 +50,7 @@
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Title styling */
+/* Title styling
 .prst-title {
     font-size: 20px;
     font-weight: 600;
@@ -60,10 +58,10 @@
 }
 
 /* Description styling */
-.prst-descrption {
+/* .prst-descrption {
     font-size: 16px;
     color: #555;
     line-height: 1.5;
-}
+}  */
 
 /*# sourceMappingURL=view.css.map*/

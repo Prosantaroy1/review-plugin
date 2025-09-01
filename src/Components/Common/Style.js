@@ -1,16 +1,17 @@
+import { deskBreakpoint, mobileBreakpoint, tabBreakpoint } from '../../../../bpl-tools/utils/data';
 import { getBackgroundCSS, getBorderCSS, getBoxCSS, getTypoCSS } from "../../../../bpl-tools/utils/getCSS";
 
-const Style = ({ attributes, id }) => {
-	const { Styles } = attributes;
+const Style = ({ attributes, id, device }) => {
+	const { Styles = {}, gridLayout = {}, align } = attributes || {};
 
 	const { containerSection, headingStyle, cardContent } = Styles || {}; //styles
 
 	const { title, subTitle } = headingStyle || {};  //heading
 
-	const { cardTitle, cardDescription } = cardContent;
+	const { cardTitle, cardDescription, cardBoxStyle } = cardContent;
 
 
-	//console.log('title-color', title?.color)
+	console.log('grid layout', gridLayout)
 
 	const mainSl = `#${id}`;
 	const blockSl = `${mainSl} .container-prst-main`;
@@ -19,6 +20,7 @@ const Style = ({ attributes, id }) => {
 	const headingTitleSl = `${headingmainSl} .prst-heading-Title-2`;
 	const headingSubTitleSl = `${headingmainSl} .prst-heading-SubTitle-2`;
 
+	const cardMainDivSl = ` ${blockSl} .prst-cards-div `
 	const carddivSl = `${blockSl} .prst-single-cards`;
 	const contentTitle = ` ${carddivSl} .prst-title `
 	const contentDescription = ` ${carddivSl} .prst-descrption `
@@ -51,6 +53,30 @@ const Style = ({ attributes, id }) => {
 		
 		${headingSubTitleSl}{
 			color: ${subTitle?.color};
+		}
+
+		${cardMainDivSl}{
+			gap: ${gridLayout?.gap}
+		}
+		${deskBreakpoint}{
+		   ${cardMainDivSl}{
+		      grid-template-columns: repeat(${align ? gridLayout?.desktop : 3}, 1fr);
+		   }
+		}
+		${tabBreakpoint}{ 
+		   ${cardMainDivSl}{ 
+			   grid-template-columns: repeat(${align ? gridLayout?.tablet : 2}, 1fr);
+			} 
+		}
+		${mobileBreakpoint}{ 
+		   ${cardMainDivSl}{ 
+			   grid-template-columns: repeat(${align ? gridLayout?.mobile : 1}, 1fr);
+			} 
+		}
+		${carddivSl}{
+		  ${getBackgroundCSS(cardBoxStyle?.bg)}
+		  padding: ${getBoxCSS(cardContent?.cardBoxStyle?.padding)};  
+		  border-radius: ${getBoxCSS(cardContent?.cardBoxStyle?.borderRadius)};  
 		}
 
 		${contentTitle}{
