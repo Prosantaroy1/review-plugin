@@ -1,6 +1,6 @@
 import './HeadingTitle.css'
 
-const HeadingTitle = ({ attributes, setAttributes }) => {
+const HeadingTitle = ({ attributes, }) => {
 
     const { HeadingSection = {} } = attributes || {};
 

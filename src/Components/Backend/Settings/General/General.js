@@ -4,7 +4,7 @@ import { PanelBody, TextareaControl, TextControl, } from "@wordpress/components"
 import { updateData } from "../../../../utils/functions";
 import { ItemsPanel } from '../../../../../../bpl-tools/Components';
 import FeedbackItemPanel from '../FeedbackItemPanel/FeedbackItemPanel';
-import { useState } from 'react';
+//import { useState } from 'react';
 
 const General = ({ attributes, setAttributes }) => {
   const { HeadingSection = {}, activeIndex } = attributes || {};

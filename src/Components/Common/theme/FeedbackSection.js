@@ -1,5 +1,5 @@
 import HeadingTitle from '../HeadingTitle/HeadingTitle';
-import './feedbackSec.css';
+// import './feedbackSec.css';
 
 const FeedbackSection = ({ attributes, setAttributes }) => {
 
@@ -8,7 +8,7 @@ const FeedbackSection = ({ attributes, setAttributes }) => {
     //console.log(feedBackAll);
 
     return (
-        <div className='container-prst-main'>
+        <div className='container-prst-main feedbackSectionOne'>
             <div className='section-all-card-prst'>
                 <HeadingTitle {...{ attributes, setAttributes }} />
                 <div className='prst-cards-div'>

@@ -21,12 +21,14 @@ define('PRSTB_DIR_URL', plugin_dir_url(__FILE__));
 define('PRSTB_DIR_PATH', plugin_dir_path(__FILE__));
 
 
+
 if (!class_exists('PRSTBPlugin')) {
 	class PRSTBPlugin
 	{
 		function __construct()
 		{
 			add_action('init', [$this, 'onInit']);
+			add_action('enqueue_block_assets', [$this, 'my_marquee_theme']);
 		}
 
 		function onInit()
@@ -34,6 +36,28 @@ if (!class_exists('PRSTBPlugin')) {
 			register_block_type(__DIR__ . '/build');
 
 		}
+		function my_marquee_theme()
+		{
+
+			wp_enqueue_script(
+				'wp_slider',
+				'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js',
+				[],
+				PRSTB_VERSION,
+				true
+			);
+
+			wp_enqueue_style(
+				'wp_slider_style',
+				'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css',
+				[], 
+				PRSTB_VERSION
+			);
+
+
+		}
+
+
 	}
 	new PRSTBPlugin();
 }

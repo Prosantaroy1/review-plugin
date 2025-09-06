@@ -1,7 +1,7 @@
 import { deskBreakpoint, mobileBreakpoint, tabBreakpoint } from '../../../../bpl-tools/utils/data';
 import { getBackgroundCSS, getBorderCSS, getBoxCSS, getTypoCSS } from "../../../../bpl-tools/utils/getCSS";
 
-const Style = ({ attributes, id, device }) => {
+const Style = ({ attributes, id }) => {
 	const { Styles = {}, gridLayout = {}, align } = attributes || {};
 
 	const { containerSection, headingStyle, cardContent } = Styles || {}; //styles
