@@ -830,6 +830,43 @@ const getMaskCSS = mask => {
 
 /***/ }),
 
+/***/ "./src/Components/Common/HeadingTitle/HeadingTitle.js":
+/*!************************************************************!*\
+  !*** ./src/Components/Common/HeadingTitle/HeadingTitle.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _HeadingTitle_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./HeadingTitle.css */ "./src/Components/Common/HeadingTitle/HeadingTitle.css");
+
+
+const HeadingTitle = ({
+  attributes
+}) => {
+  const {
+    HeadingSection = {}
+  } = attributes || {};
+  const {
+    headingTitle = "",
+    headingSubTitle = " "
+  } = HeadingSection || {};
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "prst-headingSection"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+    className: "prst-heading-Title-2"
+  }, headingTitle), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "prst-heading-SubTitle-2"
+  }, headingSubTitle, " "));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (HeadingTitle);
+
+/***/ }),
+
 /***/ "./src/Components/Common/Style.js":
 /*!****************************************!*\
   !*** ./src/Components/Common/Style.js ***!
@@ -955,10 +992,10 @@ const Style = ({
 
 /***/ }),
 
-/***/ "./src/Components/Common/theme/FeedbackSectionTwo.js":
-/*!***********************************************************!*\
-  !*** ./src/Components/Common/theme/FeedbackSectionTwo.js ***!
-  \***********************************************************/
+/***/ "./src/Components/Common/theme/FeedbackSection.js":
+/*!********************************************************!*\
+  !*** ./src/Components/Common/theme/FeedbackSection.js ***!
+  \********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -967,37 +1004,52 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _feedbackSec_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./feedbackSec.css */ "./src/Components/Common/theme/feedbackSec.css");
+/* harmony import */ var _HeadingTitle_HeadingTitle__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../HeadingTitle/HeadingTitle */ "./src/Components/Common/HeadingTitle/HeadingTitle.js");
 
-//import HeadingTitle from '../HeadingTitle/HeadingTitle';
 
-const FeedbackSectionTwo = ({
+// import './feedbackSec.css';
+
+const FeedbackSection = ({
   attributes,
   setAttributes
 }) => {
   const {
     feedBackAll = []
   } = attributes || {};
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, feedBackAll.length > 0 && feedBackAll.map((item, idx) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    key: idx,
-    className: "swiper-slide prst-single-cards",
-    onClick: () => setAttributes({
-      activeIndex: idx
-    })
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
-    className: "prst-descrption"
-  }, item.description), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
-    className: "prst-title"
-  }, item.title))));
+
+  //console.log(feedBackAll);
+
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "container-prst-main feedbackSectionOne"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "section-all-card-prst"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_HeadingTitle_HeadingTitle__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    attributes,
+    setAttributes
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "prst-cards-div"
+  }, feedBackAll.length > 0 && feedBackAll.map((item, idx) => {
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      key: idx,
+      className: "prst-single-cards",
+      onClick: () => setAttributes({
+        activeIndex: idx
+      })
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+      className: "prst-title"
+    }, item.title), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+      className: "prst-descrption"
+    }, item.description));
+  }))));
 };
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FeedbackSectionTwo);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FeedbackSection);
 
 /***/ }),
 
-/***/ "./src/Components/Common/theme/feedbackSec.css":
-/*!*****************************************************!*\
-  !*** ./src/Components/Common/theme/feedbackSec.css ***!
-  \*****************************************************/
+/***/ "./src/Components/Common/HeadingTitle/HeadingTitle.css":
+/*!*************************************************************!*\
+  !*** ./src/Components/Common/HeadingTitle/HeadingTitle.css ***!
+  \*************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -1145,110 +1197,88 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./style.scss */ "./src/style.scss");
-/* harmony import */ var _Components_Common_Style__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Components/Common/Style */ "./src/Components/Common/Style.js");
-/* harmony import */ var _Components_Common_theme_FeedbackSectionTwo__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Components/Common/theme/FeedbackSectionTwo */ "./src/Components/Common/theme/FeedbackSectionTwo.js");
-
-// frontend.js
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./src/style.scss");
+/* harmony import */ var _Components_Common_Style__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Components/Common/Style */ "./src/Components/Common/Style.js");
+/* harmony import */ var _Components_Common_theme_FeedbackSection__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Components/Common/theme/FeedbackSection */ "./src/Components/Common/theme/FeedbackSection.js");
 
 
 
 
-
-const TestimonialBlock = ({
-  attributes,
-  id
-}) => {
-  const swiperRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-    if (window.Swiper && swiperRef.current) {
-      new window.Swiper(swiperRef.current, {
-        slidesPerView: 1,
-        spaceBetween: 20,
-        loop: true,
-        navigation: {
-          nextEl: swiperRef.current.querySelector('.swiper-button-next'),
-          prevEl: swiperRef.current.querySelector('.swiper-button-prev')
-        },
-        pagination: {
-          el: swiperRef.current.querySelector('.swiper-pagination'),
-          clickable: true
-        },
-        breakpoints: {
-          1024: {
-            slidesPerView: 1
-          },
-          768: {
-            slidesPerView: 1
-          },
-          480: {
-            slidesPerView: 1
-          }
-        }
-      });
-    }
-  }, []);
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Common_Style__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    attributes: attributes,
-    id: id
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "swiper mySwiper",
-    ref: swiperRef
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "swiper-wrapper"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Common_theme_FeedbackSectionTwo__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    attributes
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "swiper-pagination"
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "swiper-button-next"
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "swiper-button-prev"
-  })));
-};
-
-// DOM এ রেন্ডার
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.wp-block-b-blocks-prst-testimonial').forEach(block => {
+  const blocks = document.querySelectorAll('.wp-block-b-blocks-prst-testimonial');
+  blocks.forEach(block => {
     const attributes = JSON.parse(block.dataset.attributes);
-    (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(block).render((0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(TestimonialBlock, {
+
+    // Render React components
+    const {
+      createRoot
+    } = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
+    const React = __webpack_require__(/*! react */ "react");
+    createRoot(block).render((0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Common_Style__WEBPACK_IMPORTED_MODULE_2__["default"], {
       attributes: attributes,
       id: block.id
-    }));
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "feedbackMainContainer"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Common_theme_FeedbackSection__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      attributes
+    }))));
     block.removeAttribute('data-attributes');
   });
 });
 
-// // frontend.js
+// frontend.js
+// import { createRoot } from 'react-dom/client';
+// import React, { useRef, useEffect } from 'react';
 // import './style.scss';
 // import Style from './Components/Common/Style';
 // import FeedbackSectionTwo from './Components/Common/theme/FeedbackSectionTwo';
 
-// document.addEventListener('DOMContentLoaded', () => {
-// 	const blocks = document.querySelectorAll('.wp-block-b-blocks-prst-testimonial');
+// const TestimonialBlock = ({ attributes, id }) => {
+// 	const swiperRef = useRef(null);
 
-// 	blocks.forEach(block => {
-// 		const attributes = JSON.parse(block.dataset.attributes);
+// 	useEffect(() => {
+// 		if (window.Swiper && swiperRef.current) {
+// 			new window.Swiper(swiperRef.current, {
+// 				slidesPerView: 1,
+// 				spaceBetween: 20,
+// 				loop: true,
+// 				navigation: {
+// 					nextEl: swiperRef.current.querySelector('.swiper-button-next'),
+// 					prevEl: swiperRef.current.querySelector('.swiper-button-prev'),
+// 				},
+// 				pagination: {
+// 					el: swiperRef.current.querySelector('.swiper-pagination'),
+// 					clickable: true,
+// 				},
+// 				breakpoints: {
+// 					1024: { slidesPerView: 1 },
+// 					768: { slidesPerView: 1 },
+// 					480: { slidesPerView: 1 },
+// 				},
+// 			});
+// 		}
+// 	}, []);
 
-// 		// Render React components
-// 		const { createRoot } = require('react-dom/client');
-// 		const React = require('react');
-
-// 		createRoot(block).render(
-// 			<>
-// 				<Style attributes={attributes} id={block.id} />
-// 				<div className="swiper mySwiper">
-// 					<div className="swiper-wrapper">
-// 						<FeedbackSectionTwo {...{ attributes }} />
-// 					</div>
-// 					<div className="swiper-pagination"></div>
-// 					<div className="swiper-button-next"></div>
-// 					<div className="swiper-button-prev"></div>
+// 	return (
+// 		<>
+// 			<Style attributes={attributes} id={id} />
+// 			<div className="swiper mySwiper" ref={swiperRef}>
+// 				<div className="swiper-wrapper">
+// 					<FeedbackSectionTwo {...{ attributes }} />
 // 				</div>
-// 			</>
-// 		);
+// 				<div className="swiper-pagination"></div>
+// 				<div className="swiper-button-next"></div>
+// 				<div className="swiper-button-prev"></div>
+// 			</div>
+// 		</>
+// 	);
+// };
 
+// // DOM এ রেন্ডার
+// document.addEventListener('DOMContentLoaded', () => {
+// 	document.querySelectorAll('.wp-block-b-blocks-prst-testimonial').forEach(block => {
+// 		const attributes = JSON.parse(block.dataset.attributes);
+// 		createRoot(block).render(<TestimonialBlock attributes={attributes} id={block.id} />);
 // 		block.removeAttribute('data-attributes');
 // 	});
 // });

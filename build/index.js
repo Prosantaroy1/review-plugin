@@ -45600,11 +45600,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _Settings_Settings__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Settings/Settings */ "./src/Components/Backend/Settings/Settings.js");
 /* harmony import */ var _Common_Style__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Common/Style */ "./src/Components/Common/Style.js");
-/* harmony import */ var _Common_theme_FeedbackSectionTwo__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Common/theme/FeedbackSectionTwo */ "./src/Components/Common/theme/FeedbackSectionTwo.js");
-/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
-/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../editor.scss */ "./src/editor.scss");
-
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../editor.scss */ "./src/editor.scss");
+/* harmony import */ var _Common_theme_FeedbackSection__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Common/theme/FeedbackSection */ "./src/Components/Common/theme/FeedbackSection.js");
 
 
 
@@ -45619,39 +45618,6 @@ const Edit = props => {
     clientId,
     device
   } = props;
-  const swiperRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-    if (window.Swiper && swiperRef.current) {
-      new window.Swiper(swiperRef.current, {
-        slidesPerView: 1,
-        // একসাথে ৪টি কার্ড দেখাবে
-        spaceBetween: 20,
-        // কার্ডের মধ্যে ২০px ফাঁক
-        loop: true,
-        // লুপিং
-        navigation: {
-          nextEl: swiperRef.current.querySelector(".swiper-button-next"),
-          prevEl: swiperRef.current.querySelector(".swiper-button-prev")
-        },
-        pagination: {
-          el: swiperRef.current.querySelector(".swiper-pagination"),
-          clickable: true
-        },
-        breakpoints: {
-          // Responsive
-          1024: {
-            slidesPerView: 1
-          },
-          768: {
-            slidesPerView: 1
-          },
-          480: {
-            slidesPerView: 1
-          }
-        }
-      });
-    }
-  }, []);
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Settings_Settings__WEBPACK_IMPORTED_MODULE_2__["default"], {
     attributes,
     setAttributes,
@@ -45665,22 +45631,13 @@ const Edit = props => {
     id: `block-${clientId}`,
     device: device
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "swiper mySwiper",
-    ref: swiperRef
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "swiper-wrapper"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Common_theme_FeedbackSectionTwo__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    className: "feedbackMainContainer"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Common_theme_FeedbackSection__WEBPACK_IMPORTED_MODULE_6__["default"], {
     attributes,
     setAttributes
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "swiper-pagination"
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "swiper-button-next"
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "swiper-button-prev"
   }))));
 };
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_wordpress_data__WEBPACK_IMPORTED_MODULE_5__.withSelect)(select => {
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_wordpress_data__WEBPACK_IMPORTED_MODULE_4__.withSelect)(select => {
   const {
     getDeviceType
   } = select("core/editor");
@@ -46084,6 +46041,44 @@ const Style = ({
 
 /***/ }),
 
+/***/ "./src/Components/Common/HeadingTitle/HeadingTitle.js":
+/*!************************************************************!*\
+  !*** ./src/Components/Common/HeadingTitle/HeadingTitle.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _HeadingTitle_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./HeadingTitle.css */ "./src/Components/Common/HeadingTitle/HeadingTitle.css");
+
+
+const HeadingTitle = ({
+  attributes
+}) => {
+  const {
+    HeadingSection = {}
+  } = attributes || {};
+  const {
+    headingTitle = "",
+    headingSubTitle = " "
+  } = HeadingSection || {};
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "prst-headingSection"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+    className: "prst-heading-Title-2"
+  }, headingTitle), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "prst-heading-SubTitle-2"
+  }, headingSubTitle, " "));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (HeadingTitle);
+
+/***/ }),
+
 /***/ "./src/Components/Common/Style.js":
 /*!****************************************!*\
   !*** ./src/Components/Common/Style.js ***!
@@ -46210,10 +46205,10 @@ const Style = ({
 
 /***/ }),
 
-/***/ "./src/Components/Common/theme/FeedbackSectionTwo.js":
-/*!***********************************************************!*\
-  !*** ./src/Components/Common/theme/FeedbackSectionTwo.js ***!
-  \***********************************************************/
+/***/ "./src/Components/Common/theme/FeedbackSection.js":
+/*!********************************************************!*\
+  !*** ./src/Components/Common/theme/FeedbackSection.js ***!
+  \********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -46223,30 +46218,45 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _feedbackSec_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./feedbackSec.css */ "./src/Components/Common/theme/feedbackSec.css");
+/* harmony import */ var _HeadingTitle_HeadingTitle__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../HeadingTitle/HeadingTitle */ "./src/Components/Common/HeadingTitle/HeadingTitle.js");
 
-//import HeadingTitle from '../HeadingTitle/HeadingTitle';
 
-const FeedbackSectionTwo = ({
+// import './feedbackSec.css';
+
+const FeedbackSection = ({
   attributes,
   setAttributes
 }) => {
   const {
     feedBackAll = []
   } = attributes || {};
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, feedBackAll.length > 0 && feedBackAll.map((item, idx) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    key: idx,
-    className: "swiper-slide prst-single-cards",
-    onClick: () => setAttributes({
-      activeIndex: idx
-    })
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
-    className: "prst-descrption"
-  }, item.description), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
-    className: "prst-title"
-  }, item.title))));
+
+  //console.log(feedBackAll);
+
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "container-prst-main feedbackSectionOne"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "section-all-card-prst"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_HeadingTitle_HeadingTitle__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    attributes,
+    setAttributes
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "prst-cards-div"
+  }, feedBackAll.length > 0 && feedBackAll.map((item, idx) => {
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      key: idx,
+      className: "prst-single-cards",
+      onClick: () => setAttributes({
+        activeIndex: idx
+      })
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+      className: "prst-title"
+    }, item.title), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+      className: "prst-descrption"
+    }, item.description));
+  }))));
 };
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FeedbackSectionTwo);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FeedbackSection);
 
 /***/ }),
 
@@ -46395,10 +46405,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/Components/Common/theme/feedbackSec.css":
-/*!*****************************************************!*\
-  !*** ./src/Components/Common/theme/feedbackSec.css ***!
-  \*****************************************************/
+/***/ "./src/Components/Common/HeadingTitle/HeadingTitle.css":
+/*!*************************************************************!*\
+  !*** ./src/Components/Common/HeadingTitle/HeadingTitle.css ***!
+  \*************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
